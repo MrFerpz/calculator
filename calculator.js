@@ -1,24 +1,27 @@
 const body = document.querySelector("body");
+const display = document.querySelector(".display");
+display.textContent = "12345";
 
 // Setting up references to each button
-const zeroBtn = document.querySelector("#0");
-const oneBtn = document.querySelector("#1");
-const threeBtn = document.querySelector("#3");
-const fourBtn = document.querySelector("#4");
-const fiveBtn = document.querySelector("#5");
-const sixBtn = document.querySelector("#6");
-const sevenBtn = document.querySelector("#7");
-const eightBtn = document.querySelector("#8");
-const nineBtn = document.querySelector("#9");
-const addBtn = document.querySelector("#+");
-const subtractBtn = document.querySelector("#-");
-const multiplyBtn = document.querySelector("#x");
-const divideBtn = document.querySelector("#÷");
-const equalsBtn = document.querySelector("#=");
-const decimalBtn = document.querySelector("#.");
-const clearAllBtn = document.querySelector("#AC");
-const clearBtn = document.querySelector("#C");
-const percentBtn = document.querySelector("#%");
+const zeroBtn = document.querySelector("#zeroButton");
+const twoBtn = document.querySelector("#twoButton");
+const oneBtn = document.querySelector("#oneButton");
+const threeBtn = document.querySelector("#threeButton");
+const fourBtn = document.querySelector("#fourButton");
+const fiveBtn = document.querySelector("#fiveButton");
+const sixBtn = document.querySelector("#sixButton");
+const sevenBtn = document.querySelector("#sevenButton");
+const eightBtn = document.querySelector("#eightButton");
+const nineBtn = document.querySelector("#nineButton");
+const addBtn = document.querySelector("#addButton");
+const subtractBtn = document.querySelector("#subtractButton");
+const multiplyBtn = document.querySelector("#multiplyButton");
+const divideBtn = document.querySelector("#divideButton");
+const equalsBtn = document.querySelector("#equalsButton");
+const decimalBtn = document.querySelector("#decimalButton");
+const clearAllBtn = document.querySelector("#ACButton");
+const clearBtn = document.querySelector("#CButton");
+const percentBtn = document.querySelector("#percentButton");
 
 function add(a, b) {
     return (a + b)
@@ -39,6 +42,7 @@ function divide(a, b) {
 let a;
 let b;
 let operator = "";
+let displayValue = "";
 
 function operate(a, b, operator) {
     switch (operator) {
@@ -57,5 +61,17 @@ function operate(a, b, operator) {
     }
 }
 
-let display = document.querySelector(".display");
-display.textContent = "yeah";
+// Now I need to add listeners to populate the display.
+zeroBtn.addEventListener("click", () => display.textContent += "0");
+oneBtn.addEventListener("click", () => display.textContent += "1");
+twoBtn.addEventListener("click", () => display.textContent += "2");
+threeBtn.addEventListener("click", () => display.textContent += "3");
+fourBtn.addEventListener("click", () => display.textContent += "4");
+fiveBtn.addEventListener("click", () => display.textContent += "5");
+sixBtn.addEventListener("click", () => display.textContent += "6");
+sevenBtn.addEventListener("click", () => display.textContent += "7");
+eightBtn.addEventListener("click", () => display.textContent += "8");
+nineBtn.addEventListener("click", () => display.textContent += "9");
+
+
+// display.textContent = displayValue;
