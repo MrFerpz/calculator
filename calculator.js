@@ -110,3 +110,10 @@ equalsBtn.addEventListener("click", () => {
 
 clearAllBtn.addEventListener("click", () => display.textContent = "");
 // display.textContent = displayValue;
+
+// NEXT TASKS:
+// Add functionality to take multiple numbers on.
+// - this may take some re-factoring. Maybe a new way to store a & b, etc.
+// Add backspace button functionality.
+// Add percentage button functionality.
+// Make it look pretty!
