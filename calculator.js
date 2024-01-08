@@ -44,23 +44,6 @@ let b;
 let operator = "";
 let displayValue = "";
 
-function operate(a, b, operator) {
-    switch (operator) {
-        case "+":
-            add(a,b);
-            break
-        case "-":
-            subtract(a,b);
-            break
-        case "x":
-            multiply(a,b);
-            break
-        case "÷":
-            divide(a,b);
-            break
-    }
-}
-
 // Now I need to add listeners to allow you to populate the display.
 zeroBtn.addEventListener("click", () => display.textContent += "0");
 oneBtn.addEventListener("click", () => display.textContent += "1");
@@ -72,6 +55,7 @@ sixBtn.addEventListener("click", () => display.textContent += "6");
 sevenBtn.addEventListener("click", () => display.textContent += "7");
 eightBtn.addEventListener("click", () => display.textContent += "8");
 nineBtn.addEventListener("click", () => display.textContent += "9");
+decimalBtn.addEventListener("click", () => display.textContent += ".");
 
 // Now I need to add logic for the operator buttons
 // I should store a value when they are clicked as "a"
@@ -79,13 +63,50 @@ nineBtn.addEventListener("click", () => display.textContent += "9");
 addBtn.addEventListener("click", () => {
     a = Number(display.textContent);
     display.textContent += " + ";
+    operator = "+";
+})
+
+subtractBtn.addEventListener("click", () => {
+    a = Number(display.textContent);
+    display.textContent += " - ";
+    operator = "-";
+})
+
+multiplyBtn.addEventListener("click", () => {
+    a = Number(display.textContent);
+    display.textContent += " x ";
+    operator = "x";
+})
+
+divideBtn.addEventListener("click", () => {
+    a = Number(display.textContent);
+    display.textContent += " ÷ ";
+    operator = "÷";
 })
 
 equalsBtn.addEventListener("click", () => {
-    secondHalf = display.textContent.split(" + ");
-    b = Number(secondHalf[1]);
-    display.textContent = add(a,b)})
+    switch (operator) {
+        case "+":
+            array = display.textContent.split(" + ");
+            b = Number(array[1]);
+            display.textContent = add(a, b);
+            break
+        case "-":
+            array = display.textContent.split(" - ");
+            b = Number(array[1]);
+            display.textContent = subtract(a, b);
+            break
+        case "x":
+            array = display.textContent.split(" x ");
+            b = Number(array[1]);
+            display.textContent = multiply(a, b);
+            break
+        case "÷":
+            array = display.textContent.split(" ÷ ");
+            b = Number(array[1]);
+            display.textContent = divide(a, b);
+            break
+    }})
 
 clearAllBtn.addEventListener("click", () => display.textContent = "");
-
 // display.textContent = displayValue;
