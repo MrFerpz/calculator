@@ -1,5 +1,24 @@
 const body = document.querySelector("body");
-const oneBtn = document.querySelector()
+
+// Setting up references to each button
+const zeroBtn = document.querySelector("#0");
+const oneBtn = document.querySelector("#1");
+const threeBtn = document.querySelector("#3");
+const fourBtn = document.querySelector("#4");
+const fiveBtn = document.querySelector("#5");
+const sixBtn = document.querySelector("#6");
+const sevenBtn = document.querySelector("#7");
+const eightBtn = document.querySelector("#8");
+const nineBtn = document.querySelector("#9");
+const addBtn = document.querySelector("#+");
+const subtractBtn = document.querySelector("#-");
+const multiplyBtn = document.querySelector("#x");
+const divideBtn = document.querySelector("#÷");
+const equalsBtn = document.querySelector("#=");
+const decimalBtn = document.querySelector("#.");
+const clearAllBtn = document.querySelector("#AC");
+const clearBtn = document.querySelector("#C");
+const percentBtn = document.querySelector("#%");
 
 function add(a, b) {
     return (a + b)
