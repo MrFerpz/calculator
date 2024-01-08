@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 const display = document.querySelector(".display");
-display.textContent = "12345";
+display.textContent = "";
 
 // Setting up references to each button
 const zeroBtn = document.querySelector("#zeroButton");
@@ -61,7 +61,7 @@ function operate(a, b, operator) {
     }
 }
 
-// Now I need to add listeners to populate the display.
+// Now I need to add listeners to allow you to populate the display.
 zeroBtn.addEventListener("click", () => display.textContent += "0");
 oneBtn.addEventListener("click", () => display.textContent += "1");
 twoBtn.addEventListener("click", () => display.textContent += "2");
@@ -73,5 +73,19 @@ sevenBtn.addEventListener("click", () => display.textContent += "7");
 eightBtn.addEventListener("click", () => display.textContent += "8");
 nineBtn.addEventListener("click", () => display.textContent += "9");
 
+// Now I need to add logic for the operator buttons
+// I should store a value when they are clicked as "a"
+
+addBtn.addEventListener("click", () => {
+    a = Number(display.textContent);
+    display.textContent += " + ";
+})
+
+equalsBtn.addEventListener("click", () => {
+    secondHalf = display.textContent.split(" + ");
+    b = Number(secondHalf[1]);
+    display.textContent = add(a,b)})
+
+clearAllBtn.addEventListener("click", () => display.textContent = "");
 
 // display.textContent = displayValue;
