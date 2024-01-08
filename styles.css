@@ -1,1 +1,8 @@
-styles
+.container {
+    background-color: black;
+}
+
+.display {
+    height: 40px;
+    background-color: grey;
+}
