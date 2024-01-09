@@ -212,14 +212,4 @@ clearBtn.addEventListener("click", () => {
     let newText = display.textContent.slice(0, -1);
     display.textContent = newText;})
 
-// display.textContent = displayValue;
-
-// NEXT TASKS:
-// Add functionality to take multiple numbers on.
-// - this may take some re-factoring. New way to store a & b (maybe c & d etc),
-// Add backspace button functionality.
-// Add percentage button functionality.
-// Add feature where if you write new numbers after equals, it starts again.
-// Make it look pretty!
-
 
