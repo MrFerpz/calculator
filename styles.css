@@ -1,10 +1,31 @@
 .container {
     background-color: black;
+    width: 235px;
+    height: 325px;
+    border: solid black 5px;
+    align-self: center;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userInputArea {
+    border: solid rgb(0, 62, 6) 10px;
 }
 
 .display {
     height: 40px;
-    background-color: grey;
+    background-color: rgb(72, 72, 72);
+    border: solid rgb(0, 62, 6) 10px;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    text-align: end;
+    margin: auto;
+    font-size: 24px;
 }
 
 button {
@@ -13,8 +34,9 @@ button {
     padding: 20px;
     margin: 2.5px;
     border-radius: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #equalsButton {
-    width: 80px;
+    width: 100px;
 }

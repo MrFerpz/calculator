@@ -113,7 +113,11 @@ clearAllBtn.addEventListener("click", () => display.textContent = "");
 
 // NEXT TASKS:
 // Add functionality to take multiple numbers on.
-// - this may take some re-factoring. Maybe a new way to store a & b, etc.
+// - this may take some re-factoring. New way to store a & b (maybe c & d etc),
+// Make sure it follows BIDMAS.
 // Add backspace button functionality.
 // Add percentage button functionality.
+// Add feature where if you write new numbers after equals, it starts again.
 // Make it look pretty!
+
+
