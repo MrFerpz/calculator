@@ -3,6 +3,7 @@ const display = document.querySelector(".display");
 display.textContent = "";
 
 // Setting up references to each button
+
 const zeroBtn = document.querySelector("#zeroButton");
 const twoBtn = document.querySelector("#twoButton");
 const oneBtn = document.querySelector("#oneButton");
@@ -50,19 +51,57 @@ let displayValue = "";
 let recentAnswer;
 
 // Now I need to add listeners to allow you to populate the display.
+// Each click checks if you have just completed a calculation.
+
 zeroBtn.addEventListener("click", () => {
     if (recentAnswer === display.textContent) {
         display.textContent = "";}
     display.textContent += "0";})
-oneBtn.addEventListener("click", () => display.textContent += "1");
-twoBtn.addEventListener("click", () => display.textContent += "2");
-threeBtn.addEventListener("click", () => display.textContent += "3");
-fourBtn.addEventListener("click", () => display.textContent += "4");
-fiveBtn.addEventListener("click", () => display.textContent += "5");
-sixBtn.addEventListener("click", () => display.textContent += "6");
-sevenBtn.addEventListener("click", () => display.textContent += "7");
-eightBtn.addEventListener("click", () => display.textContent += "8");
-nineBtn.addEventListener("click", () => display.textContent += "9");
+
+oneBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "1"});
+
+twoBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "2"});
+
+threeBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "3"});
+
+fourBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "4"});
+
+fiveBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "5"});
+    
+sixBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "6"});
+
+sevenBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "7"});
+
+eightBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "8"});
+
+nineBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "9"});
 
 decimalBtn.addEventListener("click", () => {
     if (display.textContent.includes(".")) {
