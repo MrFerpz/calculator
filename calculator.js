@@ -39,13 +39,21 @@ function divide(a, b) {
     return (a / b)
 }
 
+function percent(a, b) {
+    return ((a / b) * 100)
+}
+
 let a;
 let b;
 let operator = "";
 let displayValue = "";
+let recentAnswer;
 
 // Now I need to add listeners to allow you to populate the display.
-zeroBtn.addEventListener("click", () => display.textContent += "0");
+zeroBtn.addEventListener("click", () => {
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "0";})
 oneBtn.addEventListener("click", () => display.textContent += "1");
 twoBtn.addEventListener("click", () => display.textContent += "2");
 threeBtn.addEventListener("click", () => display.textContent += "3");
@@ -55,14 +63,19 @@ sixBtn.addEventListener("click", () => display.textContent += "6");
 sevenBtn.addEventListener("click", () => display.textContent += "7");
 eightBtn.addEventListener("click", () => display.textContent += "8");
 nineBtn.addEventListener("click", () => display.textContent += "9");
-decimalBtn.addEventListener("click", () => display.textContent += ".");
+
+decimalBtn.addEventListener("click", () => {
+    if (display.textContent.includes(".")) {
+        alert("You can't put two decimals in!")
+    } else {
+    display.textContent += "."}});
 
 // Now I need to add logic for the operator buttons
 // I should store a value when they are clicked as "a"
 
 addBtn.addEventListener("click", () => {
     
-    if (display.textContent.match(/[+\-x÷]/g)) {
+    if (display.textContent.match(/[+\-x%÷]/g)) {
         resolve()
     }
 
@@ -73,7 +86,7 @@ addBtn.addEventListener("click", () => {
 
 subtractBtn.addEventListener("click", () => {
     
-    if (display.textContent.match(/[+\-x÷]/g)) {
+    if (display.textContent.match(/[+\-x%÷]/g)) {
         resolve()
     }
     
@@ -84,7 +97,7 @@ subtractBtn.addEventListener("click", () => {
 
 multiplyBtn.addEventListener("click", () => {
     
-    if (display.textContent.match(/[+\-x÷]/g)) {
+    if (display.textContent.match(/[+\-x%÷]/g)) {
         resolve()
     }
     
@@ -94,13 +107,23 @@ multiplyBtn.addEventListener("click", () => {
 })
 
 divideBtn.addEventListener("click", () => {
-    if (display.textContent.match(/[+\-x÷]/g)) {
+    if (display.textContent.match(/[+\-x%÷]/g)) {
         resolve()
     }
     
     a = Number(display.textContent);
     display.textContent += " ÷ ";
     operator = "÷";
+})
+
+percentBtn.addEventListener("click", () => {
+    if (display.textContent.match(/[+\-x%÷]/g)) {
+        resolve()
+    }
+    
+    a = Number(display.textContent);
+    display.textContent += " % ";
+    operator = "%";
 })
 
 function resolve() {
@@ -126,7 +149,12 @@ function resolve() {
             if (b === 0) alert("Stop trying to divide by 0.");
             display.textContent = divide(a, b);
             break
-} 
+        case "%":
+            array = display.textContent.split(" % ");
+            b = Number(array[1]);
+            display.textContent = percent(a, b);
+            break
+}
 
 if (display.textContent.includes(".")) {
     let rounded = Math.round(Number(display.textContent) * 10000)/10000;
@@ -134,6 +162,10 @@ if (display.textContent.includes(".")) {
 }}
 
 equalsBtn.addEventListener("click", resolve);
+
+equalsBtn.addEventListener("click", () => {
+    recentAnswer = display.textContent;
+})
 
 clearAllBtn.addEventListener("click", () => display.textContent = "")
 
