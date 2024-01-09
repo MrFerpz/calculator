@@ -61,35 +61,54 @@ decimalBtn.addEventListener("click", () => display.textContent += ".");
 // I should store a value when they are clicked as "a"
 
 addBtn.addEventListener("click", () => {
-    a = Number(display.textContent);
+    
+    if (display.textContent.match(/[+\-x÷]/g)) {
+        resolve()
+    }
+
+    a = Number(display.textContent)
     display.textContent += " + ";
     operator = "+";
 })
 
 subtractBtn.addEventListener("click", () => {
+    
+    if (display.textContent.match(/[+\-x÷]/g)) {
+        resolve()
+    }
+    
     a = Number(display.textContent);
     display.textContent += " - ";
     operator = "-";
 })
 
 multiplyBtn.addEventListener("click", () => {
+    
+    if (display.textContent.match(/[+\-x÷]/g)) {
+        resolve()
+    }
+    
     a = Number(display.textContent);
     display.textContent += " x ";
     operator = "x";
 })
 
 divideBtn.addEventListener("click", () => {
+    if (display.textContent.match(/[+\-x÷]/g)) {
+        resolve()
+    }
+    
     a = Number(display.textContent);
     display.textContent += " ÷ ";
     operator = "÷";
 })
 
-equalsBtn.addEventListener("click", () => {
+function resolve() {
     switch (operator) {
         case "+":
             array = display.textContent.split(" + ");
             b = Number(array[1]);
-            display.textContent = add(a, b);
+            display.textContent = add(a,b);
             break
         case "-":
             array = display.textContent.split(" - ");
@@ -104,17 +123,29 @@ equalsBtn.addEventListener("click", () => {
         case "÷":
             array = display.textContent.split(" ÷ ");
             b = Number(array[1]);
+            if (b === 0) alert("Stop trying to divide by 0.");
             display.textContent = divide(a, b);
             break
-    }})
+} 
 
-clearAllBtn.addEventListener("click", () => display.textContent = "");
+if (display.textContent.includes(".")) {
+    let rounded = Math.round(Number(display.textContent) * 10000)/10000;
+    display.textContent = rounded;
+}}
+
+equalsBtn.addEventListener("click", resolve);
+
+clearAllBtn.addEventListener("click", () => display.textContent = "")
+
+clearBtn.addEventListener("click", () => {
+    let newText = display.textContent.slice(0, -1);
+    display.textContent = newText;})
+
 // display.textContent = displayValue;
 
 // NEXT TASKS:
 // Add functionality to take multiple numbers on.
 // - this may take some re-factoring. New way to store a & b (maybe c & d etc),
-// Make sure it follows BIDMAS.
 // Add backspace button functionality.
 // Add percentage button functionality.
 // Add feature where if you write new numbers after equals, it starts again.
