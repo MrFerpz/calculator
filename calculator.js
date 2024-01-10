@@ -104,10 +104,9 @@ nineBtn.addEventListener("click", () => {
     display.textContent += "9"});
 
 decimalBtn.addEventListener("click", () => {
-    if (display.textContent.includes(".")) {
-        alert("You can't put two decimals in!")
-    } else {
-    display.textContent += "."}});
+    if (recentAnswer === display.textContent) {
+        display.textContent = "";}
+    display.textContent += "."});
 
 // Now I need to add logic for the operator buttons
 // I should store a value when they are clicked as "a"
